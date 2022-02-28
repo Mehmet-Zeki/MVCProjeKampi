@@ -45,6 +45,8 @@ namespace DataAccessLayer.Concrate.Repositories
             c.SaveChanges();
         }
 
+        //Parametreli Listeleme metodu 
+        // Sadece sarta uyan degerleri getirmek için kullnaılacak
         public List<T> List(Expression<Func<T, bool>> filter)
         {
             return _object.Where(filter).ToList();
