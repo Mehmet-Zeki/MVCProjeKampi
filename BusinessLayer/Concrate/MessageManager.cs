@@ -20,7 +20,7 @@ namespace BusinessLayer.Concrate
 
         public Message GetByID(int id)
         {
-            throw new NotImplementedException();
+            return _messageDal.Get(x => x.MessageID == id);
         }
 
 
@@ -36,8 +36,8 @@ namespace BusinessLayer.Concrate
 
         public void MessageAdd(Message message)
         {
-            //_messageDal.Insert(message);
-            throw new NotImplementedException();
+          _messageDal.Insert(message);
+            
         }
 
         public void MessageDelete(Message message)
