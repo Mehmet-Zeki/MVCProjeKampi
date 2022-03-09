@@ -30,6 +30,11 @@ namespace BusinessLayer.Concrate
             return _headingDal.List();
         }
 
+        public List<Heading> GetListByWriter()
+        {
+            return _headingDal.List(x => x.WriterID == 4);
+        }
+
         public void HeadingAdd(Heading heading)
         {
             _headingDal.Insert(heading);

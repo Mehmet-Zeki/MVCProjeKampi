@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using System.Web.Security;
 namespace MVCProjeKampı.Controllers
 {
     public class LoginController : Controller
@@ -25,6 +25,9 @@ namespace MVCProjeKampı.Controllers
             
             if(adminuserinfo != null)
             {
+                FormsAuthentication.SetAuthCookie(adminuserinfo.AdminUserName,false);
+                Session["AdminUserName"] = adminuserinfo.AdminUserName;
+
                 return RedirectToAction("Index", "AdminCategory");
             }else
             {
